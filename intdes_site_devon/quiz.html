@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generative AI Quiz</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-title">Generative AI Academy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="content.html">Content</a></li>
+      <li><a class="active" href="quiz.html">Quiz</a></li>
+    </ul>
+  </nav>
+
+  <!-- 3-column layout: left-col, center-col, right-col -->
+  <div class="layout">
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <!-- Top-left image -->
+      <img
+        src="images/genai.webp"
+        alt="Top Left Image"
+        class="side-image"
+      />
+    </div>
+
+    <!-- CENTER COLUMN (quiz) -->
+    <div class="center-col">
+      <h1 class="title">Generative AI Quiz</h1>
+      <p class="description">Test your knowledge of Generative AI!</p>
+
+      <div class="quiz-container">
+        <div class="progress-indicator" id="progressIndicator">
+          <!-- Steps added by quiz.js -->
+        </div>
+
+        <form id="quizForm">
+          <!-- Question 1 -->
+          <div class="quiz-question" id="question-1">
+            <p>1. What is Generative AI?</p>
+            <label class="radio-label">
+              <input type="radio" name="q1" value="A" />
+              A type of AI that predicts content
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q1" value="B" />
+              A system for analyzing datasets
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q1" value="C" />
+              A type of AI that creates new content
+            </label>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="quiz-question hidden" id="question-2">
+            <p>2. What is NLP used for?</p>
+            <label class="radio-label">
+              <input type="radio" name="q2" value="A" />
+              Creating realistic images
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q2" value="B" />
+              Natural language understanding
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q2" value="C" />
+              Audio editing
+            </label>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="quiz-question hidden" id="question-3">
+            <p>3. What is a GAN?</p>
+            <label class="radio-label">
+              <input type="radio" name="q3" value="A" />
+              A neural network for text processing
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q3" value="B" />
+              A network used to create new content
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q3" value="C" />
+              An algorithm for sorting data
+            </label>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="quiz-question hidden" id="question-4">
+            <p>4. What does DALL-E do?</p>
+            <label class="radio-label">
+              <input type="radio" name="q4" value="A" />
+              Generate images from text prompts
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q4" value="B" />
+              Process large datasets
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q4" value="C" />
+              Perform sentiment analysis
+            </label>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="quiz-question hidden" id="question-5">
+            <p>5. What is style transfer in Generative AI?</p>
+            <label class="radio-label">
+              <input type="radio" name="q5" value="A" />
+              Applying one image's style to another image
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q5" value="B" />
+              Changing the text style
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="q5" value="C" />
+              Copying styles between datasets
+            </label>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="navigation-buttons">
+            <button type="button" class="prev-btn" onclick="prevQuestion()">
+              Previous
+            </button>
+            <button type="button" class="next-btn" onclick="nextQuestion()">
+              Next
+            </button>
+            <button
+              type="button"
+              class="submit-btn hidden"
+              onclick="submitQuiz()"
+            >
+              Submit Quiz
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard-container" id="leaderboardContainer" style="display: none;">
+        <h2>Your Score: <span id="userScore"></span></h2>
+        <input type="text" id="userName" placeholder="Enter your name" />
+        <button onclick="saveScore()">Save Score</button>
+
+        <h3>Leaderboard</h3>
+        <ol id="leaderboard"></ol>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <!-- Bottom-right image -->
+      <img
+      src="images/A-Complete-Guide-Of-Natural-Language-Processing-NLP-image-1024x576.jpg"
+        alt="Bottom Right Image"
+        class="side-image"
+      />
+    </div>
+  </div>
+  <!-- end .layout -->
+
+  <script src="quiz.js"></script>
+</body>
+</html>
